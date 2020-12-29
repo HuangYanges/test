@@ -1,7 +1,10 @@
 package com.test.hy.test.books.Entity;
 
-public class BookEntity {
+import java.io.*;
 
+public class BookEntity implements Serializable, Externalizable {
+    //id
+    private String bookId;
     //书名
     private String bookName;
     //价格
@@ -16,12 +19,21 @@ public class BookEntity {
     public BookEntity() {
     }
 
-    public BookEntity(String bookName, double jage, String image, String inbo, String zuozhe) {
+    public BookEntity(String bookId, String bookName, double jage, String image, String inbo, String zuozhe) {
+        this.bookId = bookId;
         this.bookName = bookName;
         this.jage = jage;
         this.image = image;
         this.inbo = inbo;
         this.zuozhe = zuozhe;
+    }
+
+    public String getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(String bookId) {
+        this.bookId = bookId;
     }
 
     public String getBookName() {
@@ -73,5 +85,15 @@ public class BookEntity {
                 ", inbo='" + inbo + '\'' +
                 ", zuozhe='" + zuozhe + '\'' +
                 '}';
+    }
+
+    @Override
+    public void writeExternal(ObjectOutput out) throws IOException {
+
+    }
+
+    @Override
+    public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
+
     }
 }
