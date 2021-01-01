@@ -19,12 +19,14 @@ import java.util.List;
 @Controller
 @RequestMapping("books")
 public class BooksController {
-    @Resource
+    @Autowired
     IBookService bookService;
 
     @RequestMapping(value = "/queryList/1.0")
     public String queryBooks() {
         System.out.println("1111");
-        return bookService.queryBooks().toString();
+        BookEntity b=bookService.queryBooks();
+        String s=b.toString();
+        return "books";
     }
 }

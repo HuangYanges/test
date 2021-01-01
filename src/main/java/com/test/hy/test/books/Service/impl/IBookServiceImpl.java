@@ -18,11 +18,12 @@ import java.util.List;
  **/
 @Service
 public class IBookServiceImpl implements IBookService {
-    @Resource
+    @Autowired
     IBookDao bookDao;
 
     @Override
-    public List<BookEntity> queryBooks() {
+    public BookEntity queryBooks() {
+        System.out.println("2222");
         return bookDao.queryBookAll();
     }
 }

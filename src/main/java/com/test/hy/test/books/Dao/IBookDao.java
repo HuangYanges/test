@@ -1,6 +1,7 @@
 package com.test.hy.test.books.Dao;
 
 import com.test.hy.test.books.Entity.BookEntity;
+import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -14,5 +15,6 @@ import java.util.List;
  **/
 @Repository
 public interface IBookDao {
-    List<BookEntity> queryBookAll();
+
+    BookEntity queryBookAll();
 }

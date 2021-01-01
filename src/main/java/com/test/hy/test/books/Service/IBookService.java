@@ -14,5 +14,5 @@ import java.util.List;
  **/
 
 public interface IBookService {
-    List<BookEntity> queryBooks();
+    BookEntity queryBooks();
 }
